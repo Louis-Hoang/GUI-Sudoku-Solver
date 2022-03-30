@@ -3,43 +3,14 @@ import time
 import copy
 from random import randint, shuffle
 pygame.font.init()
+from ownGenerator import checkGrid, check_valid
 
+#-------------------------------------
+#Generator
 
 board = []
 for i in range (9):
     board.append([0 for i in range(9)])
-    
-def checkGrid(board):
-  for row in range(len(board)):
-      for col in range((len(board[0]))):
-        if board[row][col]==0:
-          return False 
-  return True 
-
-def check_valid(board,num,loc):
-    # check row
-    for i in range(len(board[0])):
-        if board[loc[0]][i] == num and loc[1] != i:
-            return False
-    
-    # check column
-
-    for i in range(len(board)):
-        if board[i][loc[1]] == num and loc[0] != i:
-            return False
-    
-    # check table 3x3
-
-    box_x = loc[1] //3 #(box_x = 0|1|2)
-    box_y = loc[0] //3 #(box_y = 0|1|2)
-
-    for i in range(box_y*3, box_y*3+3):
-        for j in range(box_x*3, box_x*3+3):
-            if board[i][j] == num and (i,j) != loc:
-                return False 
-
-    return True
-
 
 def solveGrid(board):
     global counter
@@ -81,7 +52,7 @@ def fillGrid(board):
 
 fillGrid(board)
 
-attempts = 5 
+attempts = 5
 counter=1
 while attempts>0:
   #Select a random cell that is not already empty
@@ -110,37 +81,10 @@ while attempts>0:
     #We could stop here, but we can also have another attempt with a different cell just to try to remove more numbers
     attempts -= 1
 
-print(board)
+#-------------------------------------
+#GUI
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#--------------------------------------------------------------
 class Grid:
-    # board = [
-    #     [0, 0, 0, 4, 0, 0, 1, 2, 0],
-    #     [6, 0, 0, 0, 7, 5, 0, 0, 9],
-    #     [0, 0, 0, 6, 0, 1, 0, 7, 8],
-    #     [0, 0, 7, 0, 4, 0, 2, 0, 0],
-    #     [0, 0, 1, 0, 5, 0, 0, 3, 0],
-    #     [9, 0, 4, 0, 6, 0, 0, 0, 5],
-    #     [0, 7, 0, 3, 0, 0, 0, 1, 2],
-    #     [1, 2, 0, 0, 0, 7, 0, 0, 0],
-    #     [0, 0, 9, 2, 0, 6, 0, 0, 7]
-    # ]
 
     board = copy.deepcopy(board)
 
