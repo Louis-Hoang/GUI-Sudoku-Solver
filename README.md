@@ -1,5 +1,5 @@
-# GUI-Sudoku-Solver
-A sudoku game that are developed using backtracking algorithm to provide a solver as well as a random board every time the game is launched 
+# Expense-
+A web application powered by React, HTML/CSS that act as a expense tracker with filter and sort function with a bar chart that help the users to visualize their expense rate.
 
 A solvable sudoku board that are randomly created:
 
