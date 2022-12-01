@@ -1,5 +1,5 @@
-# Expense-
-A web application powered by React, HTML/CSS that act as a expense tracker with filter and sort function with a bar chart that help the users to visualize their expense rate.
+# Sudoku
+Utilizing Python and Pygame module to build a structured GUI for a classic sudoku with an auto-solved system, which progress can be visualized , created by implementing a backtracking algorithm.
 
 A solvable sudoku board that are randomly created:
 
